@@ -1,7 +1,9 @@
 package pl.kognitywistyka.ppa2021.data;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class GlobalData {
 	
@@ -17,6 +19,10 @@ public class GlobalData {
 	
 	public CountryData getDataByCountry(String country) {
 		return dataByCountry.get(country);
+	}
+	
+	public List<String> getCountries() {
+		return dataByCountry.keySet().stream().sorted().collect(Collectors.toList());
 	}
 
 }
